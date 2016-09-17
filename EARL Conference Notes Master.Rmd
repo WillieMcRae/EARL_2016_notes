@@ -22,7 +22,7 @@ This document contains all the notes I took over the two days with minimal spell
 
 Here is the short version...
 
-![](/Users/williambidstrup/Documents/Code/Experiments/EARL/wordcloud.png)
+![](/Users/williambidstrup/Documents/Code/Experiments/EARL/wordcloud.png) TBC Wordcloud image  
 
 Thanks to STHDA for the [wordcloud tutorial](http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know).
 
