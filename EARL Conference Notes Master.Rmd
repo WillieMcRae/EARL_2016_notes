@@ -1,0 +1,1223 @@
+---
+title: "EARL Conference Notes"
+author: "Will Bidstrup"
+date: "16 September 2016"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+```{r, setup, include = FALSE}
+
+setwd("/Users/williambidstrup/Documents/Code/Experiments/EARL")
+
+```
+
+# Introduction
+
+I attended the [EARL Conference](https://earlconf.com/london/) in London on Sept 14th and 15th 2016.  
+
+This document contains all the notes I took over the two days with minimal spell-checking which I will fix over time.  
+
+Here is the short version...
+
+![](/Users/williambidstrup/Documents/Code/Experiments/EARL/wordcloud.png)
+
+Thanks to STHDA for the [wordcloud tutorial](http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know).
+
+# Key Takeaways
+
+**R use is growing**  
+
+76% of analytics professional use R, with 36% using R as their primary tool. 
+
+5th most popular programming language!  [According to IEEE](http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages).  The most popular 'specialist' language.  
+
+**R Glue and Ecosystem** 
+
+
+**Reproducible research** - [Non reproducible workflow](http://www.bit.ly/reprodu) 
+
+
+**The Tidyverse**
+
+
+**My 3 favourite talks - and why**
+
+How R We Doing? Exporing new Ways For Metrics Development
+
+Transforming a Museum to be Data Driven
+
+Social Marketing with Instagram
+
+Bonus - Vincent and Spark 
+
+
+Open source is the future.  
+
+Many different tools working together, flexibility important. 
+
+Data silos versus holistic approach.
+
+Transforming no-data business may be easier than transforming/improving data business.
+
+
+# Keynote presentations
+
+## Opening address
+
+Matt Aldridge from [Mango Solutions](http://www.mango-solutions.com/).  
+
+Conference in third year running.  
+
+R usage growing.  
+
+
+## R Studio
+
+Joe Cheng, CTO [RStudio](https://www.rstudio.com/).  
+
+RStudio is a small team based in Boston (35 people).  
+
+Founded 2009 to create world class R tools.  
+
+Four main goals;  
+
+1. Create tools for *reproducible* data analysis.  
+2. Focus on usability of interfaces and APIs.
+3. Make tools available to everyone (same as R), 70% engineering is open source, essential parts must be open source.  
+4. Run a sustainable business model - by supplying Pro products that solve enterprise issues such as scalability, manageability, auditing, deployment etc.  
+
+Cool new things.  
+
+R Markdown.  
+
+RNotebook format.  
+- Allows for code chunks to be executed easily and independently in a report (no need to knit to see output). 
+- Output is displayed below chunk.  
+- Can be sent as html link with display/hide code option.  
+
+Flexdashboard - Markdown layout similar to dashboards (grids).  
+
+Shiny bookmarkeable state - can save a state of Shiny app and send as link (no need to recreate a state in app).  
+
+
+## Microsoft and R
+
+David Smith, R Community Lead, Microsoft.  
+
+R is great despite some of its shortcomings - [why](http://blog.revolutionanalytics.com/2015/06/why-has-r-been-so-successful.html)?  
+
+The shortcomings...  
+
+> "The best thing about R is that it was written by statisticians. The worst thing about R is that it was written by statisticians." Bow Cowgill
+
+Is a quirky language with many idiosyncrasies, designed for stats which is now the coolest thing ever because of Data Science explosion.  
+
+There is an 'ecosystem' which surrounds R which is one reason for its popularity and future.  
+
+R is very popular which is interesting because it is a specialist language rather than a general purpose language.  
+
+76% of analytics professional use R, with 36% using R as their primary tool. 
+
+5th most popular programming language!  [According to IEEE](http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages).  The most popular 'specialist' language.  
+
+The language itself, although quirky, is robust and well maintained by the R Core Group.  8000+ packages available via CRAN.  
+
+There is strong governance.  
+
+R is free and has an ever-increasing talent pool - and is popular in academia which is providing some of the industry leaders of the future.  
+
+
+## R Consortium
+
+The Consortium is like a cross between NATO and the Jedi Knights. 
+
+Lou Bajuk-Yorgan and Gabor Csardi talked through some of the projects that are sponsored by this group.  
+
+Key takeaway - consider the following when making submissions for funding **insert here**
+
+
+
+## Streamlining R
+
+Garret Grolemund, Chief Instructor RStudio  
+
+[Non reproducible workflow](http://www.bit.ly/reprodu)  
+
+Successful systems are seamless - the glue determines the power of the system.  
+
+R is a type of glue.  
+
+History of R.  
+
+R is an evolution of S created in Bell Labs.  
+
+John W Tukey.  
+
+SCS Library - stats computing subroutines - lots of code to fetch algorithm.  
+
+People, algorithms, hardware... needs glue.  Which is what S  was.  
+
+Structure of R.    
+
+Use profvis package to analyse and optimise your code.  
+
+Compiled code does match human thought well.  
+
+R focuses on what rather than how and focuses on interactivity.  
+
+R resembles the structure and sequence of human thought.  
+
+UNIX - manage and access programs.  
+
+C - optimise computer performance (meet the computer on its own terms).  
+
+S - optimise human performance  (R, S, Julia?).  
+
+R is effective at tasks that other languages are not.    
+
+APIs  
+
+DSL (domain specific languages)  examples ggplot2, shiny, dplyr  
+
+Expressiveness  
+
+Flexible (LISP) <----------------------> Conformist (GO)  
+
+Different approaches to programming.    
+
+Python - write once, maintain forever.    
+
+S - write many times, maintain never.    
+
+R - write well, maintain forever, use easily.    
+
+3 ways to improve R.  
+
+**1. Tidy data**    
+
+**2. Tidy tools**   
+
+Focused, chainable and composable, each function does one thing well (like words.    
+
+Compose steps with pipes.    
+
+Make it easy to call functions from within functions.    
+
+**3. Teach**    
+
+Create a website to teach people how to use your packages.    
+
+
+
+## AI: Your work, your life
+
+Kenneth Cukier, Data Editor, The Economist  
+
+The idea driving development of AI is 'more'.    
+
+More can be *different*, not just volume.    
+
+Humans have stored information for approx 70k years.  
+
+Big Data - applying classical statistics to areas where we have data, and previously we didn't.  
+
+Spot subtle patterns from data in the wild.  
+
+AI - Divine what to do and continuously improve (mostly) from data alone.  
+
+Machine learning - computer translation, speech recognition etc.  
+
+**Learn, not know**  
+
+Example - [DeepMind plays Atari video games](https://www.youtube.com/watch?v=V1eYniJ0Rnk)   
+
+Not just automation or efficiency, also *new knowledge*.  
+
+Implications of rise of robots.  
+
+Algorithmic decision making.  
+
+New business models.  Shift nature of some goods into services (recurring revenue, lease vs sale).  
+
+Embedded intelligence.  
+
+Strategy.  
+
+Measure everything.  
+
+Learn, not know.  
+
+Roomba robot.  Course correct (while learning) vs set of detailed instructions.    
+
+Problems.  
+
+Jobs.  Realignment.  Difference between jobs and work.  
+
+Transparency.  Example - Uber knows when customer battery life low, will accept surge pricing.  
+
+Causality. Why do things work?  Need to explain in some instances (auditing etc.).  
+
+Privacy.  A side-effect of transparency.  
+
+What next?  
+
+Measuring everything, new disruptions.  
+
+Short term risk of mis-use of tools. 
+
+
+# Presentations
+
+Full agenda with all the names of speakers and talks is [here](https://earlconf.com/london/uploads/Agenda_Overview_06Sep16.pdf).  
+
+## Generating reports getting you down?
+
+Hayfa Mohdzaini UCEA  
+
+People think automation is everywhere.  
+
+But, there are barriers to automation.  
+
+Time.  Skill.  Tools.
+
+UCEA case study - 17 staff serve 170 higher education institutions.  
+
+Pay negotiations, research and surveys, comms, pensions etc.  
+
+Annual report - senior staff remuneration survey.  Bespoke benchmarking service.  Data collected manually.  
+26000 salaries, 146 institutions.  
+1993 - Excel + VBA  
+2013-14 - SPSS + VBA  (2 days to produce)
+2015 - R and VBA  
+
+An easier way to generate report and make it easier to maintain.  
+
+Why R?  
+
+Looked at SPSS and R.  
+
+R has no licence fee. Mango Solutions magic (Mango has a cat!)  
+
+Benchmarking report.  
+
+Input: 26,000 rows, 15 variables.  
+Output: 700 word tables, 10,500 Excel rows.  
+
+Important to define requirements for report.  Input/output variable descriptions.  Combinations.  Factor levels.  
+Need minimum effort to change input/output values.  
+Suppress data for small samples.  (approach to confidentiality)  
+Special sampling rules. (how to not count people twice) 
+Follow style formatting.  
+
+Packages used.  
+
+openxlsx  
+dplyr  
+tidyr  
+ReporteRs  
+ggplot2  
++ VBA to handle complex formatting (interesting)   
+
+Benchmarking  
+
+Compare institution data versus survey.  
+Highlight above/below market/whole sample.  
+
+Used Tablea to visualize the comparison.  
+
+Learning points.  
+
+Automation = budget approved!  
+Clear requirements helped.  
+Pseudo data has limitations (confidentiality is a challenge)  
+Expect rounds of UAT  
+
+
+
+## Big (alternative) Data Finance
+
+Tharsis Souza from UCL  
+
+Quantitative Finance.  
+
+Use of *alternative* data.  
+
+Huge volume of data.  Applications within Financial industry to take advantage but creating cutting edge strategies.  
+
+Simple models do not capture the complexity/dimensions of additional information available.  
+
+How to combine traditional (market data) with unstructured 'Big' data, analyse and predict behaviour (with a financial impact).  
+
+Example - google search public interest in stock exchange related search correlates to financial crisis.  But more interestingly, there were some peaks *before* the crisis.  
+
+Example - mentions in Financial Times vs transactions of companies mentioned.  
+
+Example - look at search for keyword 'debt'.  How could this influence investment strategy?  
+
+Example - when text predicts stock movements - headlines and twitter mentions to predict sales and stock moves.  
+
+Example - Data Crawl (Community, Forum posts, Money and transaction), Data Refinement, Prediction Model.  
+
+Financial Quant industry is investing in Text Mining.  
+
+Some methods;  
+
+**1. Event Detection.** 
+
+Past prices do not influence future prices, but events do.  
+
+Connect to news outlet, how to define an 'event' and classify it vs new replicated from the past, something that is not 'new'.  
+
+Identify event and named entities of the event.  **Easier said than done.**
+
+> What is an event?
+
+Categorise event (example 'patent infringement').  
+
+Investigate significance of event to the entities involved.  
+
+Sentiment Analysis alongside Sales data to observe correlation or a 'normal' state.  
+
+**2. Text Mining**    
+
+Standard text mining is now being applied to financial cases.  
+
+Packages include tm, kernlab, caret.  
+
+Dictionary approach - need to use a specialised dictionary.
+
+OR train a model via machine learning (need labelled data).  
+
+**3. Complex Networks**  
+
+Packages - quantmod, igraph, entropy.  
+
+Provide holistic overview pf market structure and inter-relationships.  
+
+Example - Network Contagion within Market Correlation Structure (psychsignal.com)  
+
+Example - (yewno.com) Complex Networks + Computational Linguistics + Big Data - layers of networks (Social, Political, Financial)  
+
+
+
+## Social Marketing with Instagram  
+
+Amanda Lee, Data Analyst from MEC (Group M) 1 in 3 media dollars worldwide.  5000 staff, 27bn billings.  
+
+Strategic media planning and buying.  
+
+Business solution to lack of Instagram analytics.  
+
+The Challenge.  
+
+Social media prevalence.  Brands need to;  
+
+1 - create a presence in social channels
+2 - make use to promote products or improve awareness  
+
+How to understand what people are doing on social media - analyse the data!
+
+Identifying 'influencers'.  Good post performance, likes, comments, interactions etc.  
+
+Collaborate with influencers (influencer as contractor), example - influencer paid posts.  Posts need to be tagged as 'ad' to be transparent about paid content.  
+Facebook, Twitter, Instagram are the top social sites. Facebook and Twitter provide analytics. Instagram does not. 'This sucks'.  
+
+Success measures - length of activity, connectivity of post, clicks or eyes, size of followers etc.  Downloading via API for Facebook/Twitter is relatively straightforward.  
+
+How to get information from Instagram?  
+
+Instagram does have an open API for [developers](https://www.instagram.com/developer/).  
+
+MEC used R/Shiny.  
+
+Data comes in JSON, data collection is not straightforward.  
+
+Connect to API via R to facilitate standard reporting.  
+
+Some example info in open API - name, number of posts, number of followers, post level likes/comments/text, hashtag use, geo/meta.  
+
+Shiny was selected tool for in-house analytics front end. 
+
+rCharts package to illustrate trends over time.  rCharts provides better looking interactive visuals than ggplot2 (which are more static).  
+
+Why?  
+
+Now MEC can select best fitting influencers to generate engaging content.  
+
+Use in-house tool to compare quality of influencers (metric = likes per post).  
+
+This work was shortlisted for ‘The Smart Use of Data Award 2016'.  
+
+Started small as an experiment with R.  
+
+Packages used - httr, rjson, dplyr, tm, shiny, shinyThemes, RCharts
+
+
+## Capital One SAS to R  
+
+2 years ago all using SAS.  
+
+No all using R.  
+
+Why?  
+
+Directive to use open source came from CEO, because it is 'the future' for data science and analytics.  
+
+Why R versus other open source? 
+
+Had some expertise (tenured analysts).  
+
+Working with Revolution R (now Microsoft R) who provided advice.  
+
+Keen to use extra features available through R such as custom visualizations, packages.  
+
+Example - text mining used to analyse notes taken by call centre staff to determine which queries could/should be handled better on web.  
+
+Three main issues SAS to R.  
+
+1. Provide stable and resilient platform for 40+ concurrent users.  
+2. Ensure we have latest R versions and packages. (obstacle via internal IT and how to operate behind firewall)   
+3. Train SAS/SQL analysts to use R.  (and win hearts/minds)  
+
+Took 2 years to transform.  
+
+First proof of concept - take algorithm from SAS and deliver via R.  
+
+Then allowed analysts to 'play' in R.  
+
+Then created bespoke internal training for R.  In-house, specific, relevant to augment the standard public training.  
+
+Decision made to move all analytics from SAS to R.  
+
+Cross function team set up to run the transformation.  
+
+Failed on virtual machines (too slow) and decision to move to physical.  
+
+Prototype platform launched.  
+
+Convert code from SAS to R, update tools, monitoring.  
+
+Internal R 'Datathon' day.  
+
+Analytics Platform - 4 physical servers, R, R Studio Pro, Shiny, SQL-Lite.  
+
+Users move through a network load balancer manages access to servers.  
+
+Shared file system.  
+
+Popular packages downloaded and pre-installed.  
+
+Oracle/Teradata input.  
+
+Tableau output.  
+
+Benefits - enthusiasm, learn new skills, access to latest cutting edge tools, go from good to great, collaborate with data science leaders.  
+
+Data visualization is a gateway to getting people to understand the value.  
+
+Giving back to community (spirit of R).  
+
+Nottingham R meetups, women in tech, code club, speaking events.  
+
+Developing bespoke packages.  
+
+
+
+## Transforming a Museum to Be Data Driven 
+
+Alice Daish British Museum Data Scientist.  
+
+8M objects.  
+
+2M year history.  
+
+Starting point.  
+
+No list of data sources.  No data access.  No databases. No data warehouse.
+
+'What does Big Data mean to the museum?'  
+
+Explaining Data - Excel to Odin (image database of all items).  
+
+250 data sources.  
+
+Bubbles envy - d3 visualization, there is an r package to help.  
+
+d3.js bubble chart htmlwidget for R then into Illustrator for a 'data audit'.  
+
+Business problems = Data opportunities.  
+
+Who are our visitors? What do they do?  Are there opportunities to generate revenue?  
+
+using R in a non-Data organization (different to SAS - R example).  
+
+Silos and wrangling.  'Silo' means looking at only one source of data vs various (Data Science holistic approach).  
+
+CSV exports from external platforms. No SQL.  
+
+Email 100's columns trimmed, online shop nested by timeslots, Wi-Fi split first/surname.  
+
+Use data.table  
+
+Top 500 website search made into a wordcloud.  Dabble in Shiny - needs a place to store apps.  
+
+Use a 'did you know' approach for internal comms.  
+
+Visitor movement.  62 galleries 6M+ visitor.  
+
+Connected R with CISCO Presence API.  
+
+Excel heat map.  
+
+Predictive modelling.  
+
+Can we predict ticket sales.  
+
+Mixed effect modelling.  lmer()
+
+Future - continued data wrangling, improve data pipeline, IoT  
+
+R potential - 55,000 museums need transforming!  
+
+
+## R to Improve Supply Chain Efficiency
+
+
+Daniel from Brett Landscaping. 
+
+Improve forecasting and inventory management.  
+
+Why R?  
+
+Existing planning tools needed improving.  
+
+Reviewed commercial planning software.   
+
+Gaps between existing models and commercial software( SPSS, SAS, Forecast Pro).
+
+Forecasting the hardest obstacles - time series forecasting.  
+
+R packages - RSQLite, reshape2, forecast
+
+SQL data Warehouse ---> R Forecast ---> excel model for senior audience to play  
+
+Traffic light and exception reporting.  Safety Stock and Re-order points.  
+
+Once forecasting model is robust, then what?  
+
+Distribution Boundary Optimisation - optimize for profit.  
+
+Package - lpsolve (previously using Excel Solve)  
+
+Simulate shift patterns.  
+
+Forecast.  
+
+Production.  
+
+Feasibility.  
+
+How to use excess capacity?  
+
+Price optimization.  
+
+Opportunity cost of a lost sale.  
+
+
+
+## Putting R in OR: Transforming the analysis of modelling and simulation in the Ministry of Defence
+
+Thomas Baynes.   
+
+Maths degree, used R in stats courses.   
+
+Supports decision making especially on future force structures. 
+
+Watched dplyr tutorial at useR and a light went on.  
+
+Who we are.  
+DSTL  
+100% contract funded.  
+
+Accountable to MOD and Parliament.  
+
+Manage MOD research.  
+
+3 sites.  
+
+OR is 'Operational Research'.  Then turned into OA (Operational Analysis).  
+
+Maximise impact of science and technology for defence and security.  
+
+Application of mathematical and scientific methods to *support* executive decision makers. 
+
+'How many ships, tanks, aircraft do we need?'.  
+
+Defence Policy ---> Scenarios ---> Wargaming/Simulation ---> Concurrency Modelling ----> Procurement Decisions  
+
+'Now, what kind of tank?'  
+
+Concurrency analysis.  Input ---> ConcurrencyAanalysisTool ---> Excel Output ---> Bespoke Excel Analysis  
+
+Why R?  
+
+Because R can do things Excel can't...
+
+Example ggplot2 - violin plots  
+
+Data processing - using principles of tidy data for richer insight  
+
+Reproducibility - when something changes (always does) changes are error prone and undocumented. With R, just update script.  
+
+Shiny  
+
+Running R alongside previous process - adding Charts, Markdown, Shiny - *don't throw away something that is working*.  
+
+Practical considerations.  
+
+No admin/access rights to internet, lengthy approvals.  
+
+Virtual machines isolated from main network was a game changer.  
+
+DSTL moving towards a bigger data science program with bigger cohort of skilled users.  
+
+How to change? Start small, show a cool chart.  Incremental steps, build evangelists.  
+
+Code control, versioning (Git) are new problems that come alongside the R model.  
+
+
+
+## How R We Doing? Exploring New Ways for Metrics Development in Operations Assessment
+
+Marcus Gaul
+
+NCI Agency (NATO) 25 people in team.   
+
+5 years in Afghanistan.  
+
+Lots of interventions/events/humanitarian/financial/political.    
+
+Assessment - what is it?  Continual monitoring and evaluation (feedback cycle).  
+
+NATO calls this 'Operations Assessment'.  
+
+Evidence to support decision making.  
+
+A warning panel, where to focus attention.  
+
+The world as a system of systems.  
+
+Elements. Links. 
+
+Find vulnerabilities, dependencies, weaknesses, relationships. Layers of networks.  
+
+Super complex examples (Afghanistan).  
+
+Systems theory.  Empiricism.  
+
+Metrics, metrics, metrics.  Perform continuous measurements.  
+
+MOP (performance) did something happen vs MOE (effectiveness) to desired effect.  
+
+Evolution from current to desired state.  
+
+Metrics are interconnected naturally or assessed.  PMESII.  
+
+Traditional approaches to developing metrics underestimate the complexity, often neglect lessons learned, fail to consult SME, use too few previous examples.  Often applied in mechanistic checklist approach.  List methodology can reinforce anchoring bias.  
+
+How can R/Shiny help overcome these challenges.  
+
+Phase 1 - methodology, data collection, initial metric repo, exploration and demonstrator development.  
+
+Packages - htmlwidgets, shinyjs, shinydashboards, DT, networkD3, visNetwork  
+
+Multiple SME add metrics to separate sources which are accessed via a Shiny app which performs metric analysis.  
+
+Future.  
+
+Database integration.  
+
+Enhance analytics, extend scope.  
+
+Key word mining, auto categorization, metrics clusters.  
+
+Wiki Engine.    
+
+Conclusions.  
+
+Tested approaches to metrics development and measurement.  
+
+R and Shiny effective.  
+
+Secrecy/classification a big issue - using classified metrics for example.  
+
+Metric Visualizations (dots are MetricsOfPerformance or MetricsOfEffectiveness).  
+
+Set up base data in the right way will make things easier!  
+
+
+## It’s not the size that matters, it’s how you use it: How good use of data can trump “big” data 
+
+Nick Masca from BGL  
+
+Insurance intermediary.  
+
+Price comparison websites.  
+
+Messages from various vendors...  
+
+Unleash the real Value of Data!
+
+Are you ready to analyse All your Big Data?  
+
+Harness the power of Big Data.  
+
+Analyse it all.  
+
+How important is Volume?  
+
+Highlight advantages of a considered approach to data analysis vs stalling because data is not 'big'.    
+
+Example - Fraud Detection  
+
+Fraud scorecard to identify fraud at point of quote or asap post sale.  
+
+Past versions build with GLM.  
+
+More recently, using a machine learning approach enabled more frequent updates, broader range of predictors.  
+
+But automation can lead to questions...  
+
+How much data to use?  
+
+How long a time frame?  
+
+How often to be updated?  
+
+Sampling schemes.  Up or down sampling?  
+
+Data usage - as many predictors as possible or be selective?  
+
+Approach   
+
+Samples across different time periods.  
+
+Fitted penalised logistic regression models. 
+
+Considered 700 parameters.  
+
+Evaluated model in terms of AUC, True Positive, False Positive rates.  
+
+Packages - RODBC, glmnet, doParallel
+
+Increased number of rows after 50k had neglible effect.  
+
+Using ALL data isn't always the best approach.  Identifying long terms trends vs recent changes in behaviour.  
+
+Up-sampling (preferring) yielded better results.  Analysing ALL data (no sampling) gave **worse performance**.  
+
+
+
+Example 2 - Project Tangerine
+
+Machine Learning to predict insurance prices.  
+
+Fitted penalised GLM using quote info.  
+
+Packages - data encoded to svmLight format using RSofia, h2o
+
+Sqrt of mean square error being used to evaluate.  
+
+More data was worse result.  
+
+
+Example 3 - NPS (Net Promoter Score) Text Analytics
+
+Classify (automatically) responses into complaints categories.  Previously classification done manually (9-13 variables).  
+
+Training data was category and count.  
+
+Multiple docs ---> exclude punctuation, tokenise,  exclude stop words, lower case, stemming  
+
+Create document term frequency  
+
+Packages - tm, SnowballC, glmnet 
+
+Using more data doesn't necessarily give advantage.  Analysing ALL is similarly not always the best approach.  Small can be ok.  
+
+
+
+## ML for SparkR: Just Add Water
+
+What is Spark?  
+
+Use a bomb. Use a bigger bomb.  (or many smaller bombs?).  
+
+Connect machines, store data on multiple machines.  
+
+Bring code to data - not the other way around.  
+
+Spark facilitates parallel computing to wrangle/analyse large datasets.  
+
+Kaggle WoW set.  
+
+Installation is easy (devtools).  
+
+
+## Large Scale Experiments at eBay
+
+Maciej Biedowski  
+
+300M searches per day.  
+
+1B live listings.  
+
+Lots of data!  
+
+How to optimize ad spend in offline environments - do some experiments.  
+
+Observational studies.  Account for factors and create model.  
+
+Experiments.
+
+A/B test, estimate causal effect.  
+
+Experimental design can be tricky.  
+
+No clear control regions.  
+
+One approach - synthetic controls.  
+
+Create an artificial control unit.  (package - synth)  
+
+Synthetic controls + ML + Randomized control  
+
+
+
+
+## Stream Processing with Kinesis
+
+CARD.com  
+
+Many data partners (sources of data to inform activity).  
+
+Why R?
+
+Simple code for data transformations.
+
+Classic visual of data platform.
+
+Hybrid era - API, data hourly.  
+
+Unified era - single source, multiple tags.  
+
+
+## Azure ML to productionize R Models
+
+Ben Downe, BCA  
+
+redhat6, visual studio, MRAN (Microsoft Azure Machine Learning Studio).  
+
+How to take models and make production-ready?  
+
+Azure ML.  
+
+One button API publish.  Simple create/destruct.  
+
+Develop and train models on R Studio Server, then test and deploy on Azure ML.  
+
+Speed, easy, IP remains with BCA, data is local.  
+
+
+
+## Shiny for allocating marketing budget across channels  
+
+Optimal budget allocation.  
+
+Marketing Mix is a top down approach.  
+
+1. estimate econometric model
+2. optimization
+
+Shiny app to solve part 2 (optimization). 
+
+Shiny app can embed links on how to use etc (any HTML).  
+
+Show actual versus optimal size by side.  
+
+Shinydashboard.  
+
+doptim package.  
+
+
+## Automating Exploratory Research  
+
+James Lawrence, RSA  
+
+EDA (Exploratory Data Analysis)  
+
+Purpose (for a modeller) 
+
+Identify predictive variables  
+
+Identify data issues  
+
+Medium sized data - 100's, 1000's variable
+
+A response variable  
+
+Data combined from different sources  
+
+Qlik
+
+googleVis  
+
+plotly, rCharts, ggvis, htmlwidgets, shiny  
+
+Philosophy - simple in simple cases, with customisable options for power users.  
+
+Identify response variable  
+
+Show summary  
+
+Each column has data  
+
+Show correlation between variables  
+
+Most correlated numeric and factor  
+
+Output split for multiple columns  
+
+Remove columns with no information?  
+
+knitr
+
+
+
+
+## Predicting Demand for Goods and Services
+
+Jeremy MEC  
+
+Analytics evaluation.  
+
+Campaign reporting, what went well, or didn't.  
+
+Data visualization.  
+
+Predictive modelling.  
+
+Product demand can vary according to external factors.  
+
+Use Demand History + Online search and weather to predict volume.  (using more than just demand history)  
+
+Collected, 3 years’ sales, weather and search.  
+
+Harmonised into one cleaned and simplified data set - in R.  
+
+Panel linear model built. (nuances of region)  
+
+Standard linear models.  Achieved R squared 0.86  
+
+sandwich - covariance estimation  
+
+lmtest - coefficiant testing  
+
+Used mean percentage error and mean absolute percentage error  
+
+When prediction runs over thresh-hold, activity kicks in.  
+
+Visualization/sandbox - traffic light approach to when something needs to happen.  
+
+Run on a weekly basis.  
+
+
+## RCloud Analytics Platform  
+
+A shared environment.  
+
+RCloud.  
+
+Based around notebook.  
+
+GitHub is behind the scenes.  rgithub package  
+
+Sits next to data lake, accessible by web. (browser based notebook)  
+
+Built in JavaScript.  
+
+
+
+## Modeling Multi-Seasonal Time Series Data
+
+Centrica.    
+
+Model boiler breakdowns.  
+
+Neural network.  
+
+Non parametric, learns complex behaviour, does not assume underlying model structure.  
+
+Aggregate multiple models for one prediction.  
+
+Inputs(from neurons), Process, Outputs(to neurons).  
+
+ANN (Artificial Neural Network).
+
+Pick a non-linear activation function.  package - rsnns 
+
+Classic Neural Network has multiple inputs through multiple layers of fully connected hidden neurons.  Has at least one output.  
+
+Always forward feeding.  
+
+Input variables I  
+
+Hidden layers H  
+
+Output O  
+
+Specify train and test %  
+
+Always use set.seed  
+
+Is a 'black box'  
+
+Long training time.  
+
+For a single layer MLP - use function Garson which will return the relative importance of each variable.  
+
+Recurrent Neural Network for use when sequence of data is important. RNN  
+
+State at time `t` depends on `t - 1`  (Elman/Jordan networks)  
+
+Back Propagation Through Time BPTT  
+
+Elman - feedback loop in hidden layer H  
+
+Jordan - feedback loop in output layer O  
+
+Merging predictions/ensembling.  
+
+[http://playground.tensorflow.org](http://playground.tensorflow.org)
+
+# Things to follow up on 
+
+My homework...
+
+## Books 
+
+Book - [The Grammar of Graphics](https://www.amazon.co.uk/Grammar-Graphics-Statistics-Computing/dp/0387245448) 
+
+Book - [Visual Display of Quantitative Information](https://www.amazon.co.uk/Visual-Display-Quantitative-Information/dp/0961392142)  
+
+Book - [Strategy: A History](http://www.foyles.co.uk/witem/business/strategy-a-history,lawrence-freedman-9780190229238) 
+
+
+## Tools
+
+Tool - Tableau, for dashboarding has full integration with R
+
+Tool - Mathematica, no integration with R, but was suggested as an interesting a powerful visualization tool *Not high priority, but looks fun*
+
+Tool - [Microsoft Data Science Virtual Machine](https://azure.microsoft.com/en-gb/documentation/articles/machine-learning-data-science-provision-vm/)
+
+Tool - GitKraken...because Krakens!
+
+
+## Techniques
+
+Technique - network graphs - exploring system of systems  
+
+Technique - metric network Analysis
+
+Technique - time series forecasting  
+
+Technique - machine learning, decision tree, random forest 
+> All models are wrong. Some are useful.
+
+Technique - HTML/JavaScript for better Shiny apps and Markdown files  
+
+Technique - Markov Chains 
+
+Technique - parallel computing  (working with large data)  
+
+Technique - geo-spatial (map for timetracking)  
+
+Technique - experiment design - want to read more about this 
+
+Technique - VBA, I saw it being used in a couple of places alongside R - good for Excel heavy environments to have an idea   
+
+Technique - start small, create something reproducible and easy to follow before applying to larger data  
+
+
+## R Packages 
+
+[forecast](https://cran.r-project.org/web/packages/forecast/forecast.pdf)
+
+[bubbles](https://github.com/jcheng5/bubbles)
+
+[rCharts](https://ramnathv.github.io/rCharts/)
+
+glmnet  
+
+h2o  
+
+SparkR
+
+sparklyr
+
+shinydashboard
+
+flexdashboards  
+
+plotly (allows two concurrent y axes) 
+
+profvis - a great way to see the impact of your code
+
+shinyThemes
+
+shinyjs
+
+DT 
+
+networkD3
+
+visNetwork
+
+Caret  
+
+data.table  
+
+magrittr  
+
+foreach  
+
+doParallel  
+
+highcharter  
+
+flexdashboard  
+
+leaflet  
+
+doptim 
+
+
+
+
+
+## Other 
+
+[htmlwidgets](www.htmlwidgets.org)
+
+[Spark][www.spark.rstudio.com]
+
+Blog - [koaning.io](http://koaning.io/)  
+
+Conference - Berlin Buzzwords  
+
+Conference - nucle.ai  
+
