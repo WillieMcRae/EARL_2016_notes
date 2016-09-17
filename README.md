@@ -1,2 +1,5 @@
 # EARL_2016_notes
-Notes the EARL Conference 2016
+
+Notes from the EARL Conference 2016.
+
+Will be updated over time.  
