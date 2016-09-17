@@ -8,12 +8,6 @@ output:
     toc: yes
 ---
 
-```{r, setup, include = FALSE}
-
-setwd("/Users/williambidstrup/Documents/Code/Experiments/EARL")
-
-```
-
 # Introduction
 
 I attended the [EARL Conference](https://earlconf.com/london/) in London on Sept 14th and 15th 2016.  
@@ -22,45 +16,43 @@ This document contains all the notes I took over the two days with minimal spell
 
 Here is the short version...
 
-![](/Users/williambidstrup/Documents/Code/Experiments/EARL/wordcloud.png) TBC Wordcloud image  
+![](/Users/williambidstrup/Documents/Code/Experiments/EARL/wordcloud.png)
 
 Thanks to STHDA for the [wordcloud tutorial](http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know).
 
 # Key Takeaways
 
-**R use is growing**  
+I am a relatively new user of R, so I found the conference extremely interesting. The people I met were all from very diverse backgrounds but seemed to be getting something out of the content. Full credit to Mango Solutions for setting up and running the event very smoothly. Here are some of my key takeaways;
 
-76% of analytics professional use R, with 36% using R as their primary tool. 
+**R use is growing**
 
-5th most popular programming language!  [According to IEEE](http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages).  The most popular 'specialist' language.  
+Not surprisingly, this was a common theme. Mike Smith from Microsoft shared an interesting presentation that touched on some of the reasons this is, and included some statistics including a [recent survey showing R to be the 5th most popular programming language](http://spectrum.ieee.org/computing/software/the-2016-top-programming-languages) - not bad for a specialist language designed by statisticians. Mike said that R’s ‘ecosystem’ was a big reason for it’s success and a reason for Microsoft’s investment in being as compatible as possible with R -  the integration of R into SQL2016 shows this.
 
-**R Glue and Ecosystem** 
+**R as glue**
 
+Of course there was much praise being heaped on R during the conference, but it was acknowledged many times, and in different ways, that R is best considered as a connector, or glue, to hold together a human focused approach to programming and data science. R as a tool in a tool-kit was the key takeaways for me, as opposed to a single tool to answer all problems.  
 
-**Reproducible research** - [Non reproducible workflow](http://www.bit.ly/reprodu) 
+**Reproducible research**
 
+A highlight for me was [this video](http://www.bit.ly/reprodu) that Garret Grolemund showed on the second day, before going into some details on the history of the R language, and what he (and others) see as the right direction for the language. While it may seem like an obvious thing for data scientists (or any scientist), the usefulness of reproducible research turned up in a lot of the presentations throughout the conference from a variety of companies. It’s clear to me that there is appetite in corporate decision-making circles to be able to see into the ‘black box’, and tools such as RMarkdown Notebooks will continue to make this easier.
 
 **The Tidyverse**
 
+I found Garret’s explanation of ‘The Tidyverse’ useful and it is encouraging to see people trying to steer the development of packages and approach to data science in a constructive way. ‘The Tidyverse’ contains;
 
-**My 3 favourite talks - and why**
+- Tidy Data (all columns are variables, all columns are observations, see [here](http://vita.had.co.nz/papers/tidy-data.pdf) for more detail)
+- Tidy Tools (functions that are focused and chain able, steps composed with pipes)
 
-How R We Doing? Exporing new Ways For Metrics Development
+**My three favourite presentations**
 
-Transforming a Museum to be Data Driven
+- Marcus Gaul’s talk about developing metrics was quite inspiring. The approach he shared involved looking at ‘systems of systems’ and networked metrics to be able to clearly display a complex environment to key analysts and decision makers. To set this up would require a lot of co-operation and buy-in from the people pulling together the base data, but the case for doing so was compelling.
 
-Social Marketing with Instagram
+- Alice Daish presented a case study on transforming the British Museum to be data-driven. She is a very good presenter, and covered lots of ground in an informative and entertaining way. She also shared lots of specific tips and tricks which was a key feature of the best talks.  She ended by pointing out there were 55,000 museums in the world, highlighting the opportunity that exists for data science in general in years to come.
 
-Bonus - Vincent and Spark 
+- The presentation from Amanda Lee from MEC was full of specific detail and clearly showed the use of R in solving a very specific problem (no analytics provided by Instagram).  It was a good case study to take in, in particular because of the very robust approach she and MEC took in establishing success metrics and pointing out the value of the activity - something media agencies are generally good at, but this one still stood out.
 
+- (Bonus) I would like to mention Vincent Warmedam’s talk about R and Spark. He was one of the best presenters and embodied the collaborative spirit of the R community by being very generous with his code and showing very clear examples of how to improve performance right away. I will be checking out [his blog](http://koaning.io/) in future for sure.
 
-Open source is the future.  
-
-Many different tools working together, flexibility important. 
-
-Data silos versus holistic approach.
-
-Transforming no-data business may be easier than transforming/improving data business.
 
 
 # Keynote presentations
@@ -200,7 +192,7 @@ R - write well, maintain forever, use easily.
 
 **2. Tidy tools**   
 
-Focused, chainable and composable, each function does one thing well (like words.    
+Focused, chainable and composable, each function does one thing well (like words).    
 
 Compose steps with pipes.    
 
